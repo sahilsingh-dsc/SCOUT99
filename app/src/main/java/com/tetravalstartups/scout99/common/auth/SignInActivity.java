@@ -1,5 +1,6 @@
 package com.tetravalstartups.scout99.common.auth;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -8,6 +9,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -113,6 +115,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void dialogForgotPassword() {
+
         LayoutInflater factory = LayoutInflater.from(this);
         final View consentDialogView = factory.inflate(R.layout.forgot_password_dialog, null);
         final AlertDialog consentDialog = new AlertDialog.Builder(this).create();
@@ -121,6 +124,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         consentDialog.setButton(Dialog.BUTTON_POSITIVE, "Forgot Password", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                hideKeyboard(SignInActivity.this);
+                progressDialog.show();
                 String email = tiFPEmail.getText().toString();
                 dialog.dismiss();
                 FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -129,6 +134,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
                                 if (task.isSuccessful()) {
+                                    progressDialog.dismiss();
                                     Toast.makeText(SignInActivity.this, "New password link sent to you registered email.", Toast.LENGTH_LONG).show();
                                 }
                             }
@@ -136,6 +142,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
+                                progressDialog.dismiss();
                                 Toast.makeText(SignInActivity.this, "" + e.getMessage(), Toast.LENGTH_LONG).show();
                             }
                         });
@@ -151,6 +158,16 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         consentDialog.setView(consentDialogView);
 
         consentDialog.show();
+    }
+    public static void hideKeyboard(Activity activity) {
+        InputMethodManager imm = (InputMethodManager) activity.getSystemService(Activity.INPUT_METHOD_SERVICE);
+        //Find the currently focused view, so we can grab the correct window token from it.
+        View view = activity.getCurrentFocus();
+        //If no view currently has focus, create a new one, just so we can grab a window token from it
+        if (view == null) {
+            view = new View(activity);
+        }
+        imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
     }
 
 }
