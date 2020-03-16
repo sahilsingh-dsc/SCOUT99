@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">SCOUT99</string>
+    <string name="app_version">v1.0 (alpha)</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="you_are">You are</string>
+    <string name="phone_number">Phone Number (With Country Code)</string>
+    <string name="existing_user_login">Existing User? Sign In</string>
+    <string name="we_need_some_information_to_serve_you_better">We need some information, to serve you better.</string>
+    <string name="where_you_heard_about_us">Where you heard about us?</string>
+    <string name="full_name">Full Name</string>
+    <string name="please_login_to_your_account">Please login to your account.</string>
+    <string name="sign_in">Sign In</string>
+    <string name="don_t_have_account_sign_up">Don\'t have account? Sign Up</string>
+    <string name="forgot_password">Forgot Password?</string>
+</resources>

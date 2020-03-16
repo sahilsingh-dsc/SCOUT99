@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "762051717426",
+    "firebase_url": "https://scout99-f4102.firebaseio.com",
+    "project_id": "scout99-f4102",
+    "storage_bucket": "scout99-f4102.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:762051717426:android:60f5460c908c1336ec0f2b",
+        "android_client_info": {
+          "package_name": "com.tetravalstartups.scout99"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "762051717426-inrqb6ibbil84sigv6og85v7egg1luld.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tetravalstartups.scout99",
+            "certificate_hash": "541c9f633a976703e3c227082f6c0591490a25cc"
+          }
+        },
+        {
+          "client_id": "762051717426-0qo9d8dhlrtp9rvo4bf6tq8lth01hee9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzSfEg3BU_7gdCOhqzHpsACxNNJpsBSWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "762051717426-0qo9d8dhlrtp9rvo4bf6tq8lth01hee9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
